@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any, cast
 
 import numpy as np
-import pandas as pd  # type: ignore[import-untyped]
+import pandas as pd
 from numpy.typing import NDArray
 
 # ----- 5.1 Per-sample level scores -------------------------------------------
@@ -44,7 +44,7 @@ def batch_U2(
     s_gaze: NDArray[np.floating[Any]], s_me: NDArray[np.floating[Any]] | None = None
 ) -> NDArray[np.floating[Any]]:
     if s_me is not None:
-        return cast(NDArray[np.floating[Any]], 0.5 * (s_gaze + s_me))  # type: ignore[redundant-cast]
+        return cast(NDArray[np.floating[Any]], 0.5 * (s_gaze + s_me))
     return s_gaze.copy()
 
 
