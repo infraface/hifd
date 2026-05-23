@@ -330,13 +330,35 @@ def compose(
 
 
 def _export_latex(df: pd.DataFrame, out_path: Path) -> None:
+    # Hand-rolled to avoid pandas' jinja2 dependency: DataFrame.to_latex in
+    # pandas 2.x routes through Styler, which requires jinja2.
     out_path.parent.mkdir(parents=True, exist_ok=True)
     profile_cols = [c for c in df.columns if c not in {"method", "P", "Q", "U1", "U2", "U3"}]
     cols = ["method", "P", "Q", "U1", "U2", "U3", *profile_cols]
     keep = [c for c in cols if c in df.columns]
-    # to_latex returns Any under strict mypy
-    latex: str = df[keep].to_latex(index=False, float_format="%.3f")
-    out_path.write_text(latex)
+    subset = df[keep]
+
+    col_spec = "l" + "r" * (len(keep) - 1)
+    lines: list[str] = [
+        f"\\begin{{tabular}}{{{col_spec}}}",
+        "\\toprule",
+        " & ".join(keep) + " \\\\",
+        "\\midrule",
+    ]
+    for _, row in subset.iterrows():
+        cells: list[str] = []
+        for col in keep:
+            v = row[col]
+            if pd.isna(v):
+                cells.append("--")
+            elif isinstance(v, float):
+                cells.append(f"{v:.3f}")
+            else:
+                cells.append(str(v))
+        lines.append(" & ".join(cells) + " \\\\")
+    lines.append("\\bottomrule")
+    lines.append("\\end{tabular}")
+    out_path.write_text("\n".join(lines) + "\n")
 
 
 # ----- run_pipeline (all stages) ---------------------------------------------
