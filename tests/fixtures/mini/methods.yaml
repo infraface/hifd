@@ -1,0 +1,7 @@
+original:
+  base_path: utilface
+methods:
+  - name: methodA
+    base_path: methods/methodA
+  - name: methodB
+    base_path: methods/methodB

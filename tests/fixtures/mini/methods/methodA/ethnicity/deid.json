@@ -1,0 +1,34 @@
+{
+  "task": "ethnicity",
+  "source": "deid",
+  "estimator": "fairface",
+  "schema_version": "1.0",
+  "predictions": {
+    "s1": {
+      "probs": [
+        0.9,
+        0.1,
+        0.0
+      ]
+    },
+    "s2": {
+      "probs": [
+        0.9,
+        0.1,
+        0.0
+      ]
+    },
+    "s3": {
+      "probs": [
+        0.9,
+        0.1,
+        0.0
+      ]
+    }
+  },
+  "class_names": [
+    "white",
+    "black",
+    "asian"
+  ]
+}

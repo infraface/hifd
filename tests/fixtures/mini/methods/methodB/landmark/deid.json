@@ -1,0 +1,68 @@
+{
+  "task": "landmark",
+  "source": "deid",
+  "estimator": "mediapipe",
+  "schema_version": "1.0",
+  "predictions": {
+    "s1": {
+      "points": [
+        [
+          12.0,
+          20.0
+        ],
+        [
+          30.0,
+          42.0
+        ]
+      ],
+      "left_eye_center": [
+        0.0,
+        0.0
+      ],
+      "right_eye_center": [
+        10.0,
+        0.0
+      ]
+    },
+    "s2": {
+      "points": [
+        [
+          12.0,
+          20.0
+        ],
+        [
+          30.0,
+          42.0
+        ]
+      ],
+      "left_eye_center": [
+        0.0,
+        0.0
+      ],
+      "right_eye_center": [
+        10.0,
+        0.0
+      ]
+    },
+    "s3": {
+      "points": [
+        [
+          12.0,
+          20.0
+        ],
+        [
+          30.0,
+          42.0
+        ]
+      ],
+      "left_eye_center": [
+        0.0,
+        0.0
+      ],
+      "right_eye_center": [
+        10.0,
+        0.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "task": "gaze",
+  "source": "original",
+  "estimator": "l2cs",
+  "schema_version": "1.0",
+  "predictions": {
+    "s1": {
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "s2": {
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "s3": {
+      "direction": [
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  }
+}

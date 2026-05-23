@@ -1,0 +1,29 @@
+{
+  "task": "face_embedding",
+  "source": "original",
+  "estimator": "cosface",
+  "schema_version": "1.0",
+  "predictions": {
+    "s1": {
+      "embedding": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "s2": {
+      "embedding": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    "s3": {
+      "embedding": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

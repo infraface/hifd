@@ -1,0 +1,30 @@
+{
+  "task": "micro_exp",
+  "source": "original",
+  "estimator": "samer",
+  "schema_version": "1.0",
+  "predictions": {
+    "s1": {
+      "probs": [
+        1.0,
+        0.0
+      ]
+    },
+    "s2": {
+      "probs": [
+        1.0,
+        0.0
+      ]
+    },
+    "s3": {
+      "probs": [
+        1.0,
+        0.0
+      ]
+    }
+  },
+  "class_names": [
+    "calm",
+    "tense"
+  ]
+}

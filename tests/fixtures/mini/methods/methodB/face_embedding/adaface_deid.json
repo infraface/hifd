@@ -1,0 +1,29 @@
+{
+  "task": "face_embedding",
+  "source": "deid",
+  "estimator": "adaface",
+  "schema_version": "1.0",
+  "predictions": {
+    "s1": {
+      "embedding": [
+        0.8,
+        0.2,
+        0.0
+      ]
+    },
+    "s2": {
+      "embedding": [
+        0.8,
+        0.2,
+        0.0
+      ]
+    },
+    "s3": {
+      "embedding": [
+        0.8,
+        0.2,
+        0.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hifd"
+version = "0.1.0"
+description = "HiFD: a holistic metric for face de-identification evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Hui Wei", email = "huiwei.truth@gmail.com" }]
+keywords = ["face-de-identification", "privacy", "metric", "benchmark", "computer-vision"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "mypy>=1.8",
+    "ruff>=0.5",
+    "types-PyYAML>=6.0",
+    "build>=1.0",
+    "twine>=5.0",
+]
+
+[project.scripts]
+hifd = "hifd.cli:main"
+
+[project.urls]
+Homepage      = "https://github.com/infraface/hifd"
+Documentation = "https://github.com/infraface/hifd#readme"
+Issues        = "https://github.com/infraface/hifd/issues"
+Source        = "https://github.com/infraface/hifd"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hifd"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/hifd/py.typed" = "hifd/py.typed"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/hifd", "tests", "README.md", "LICENSE", "CHANGELOG.md", "docs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+files = ["src/hifd"]

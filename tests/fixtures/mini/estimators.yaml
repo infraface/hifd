@@ -1,0 +1,56 @@
+tasks:
+  age:
+    estimators:
+      - name: mivolo
+        orig_json: age/orig.json
+        deid_json: age/deid.json
+  gender:
+    estimators:
+      - name: mivolo
+        orig_json: gender/orig.json
+        deid_json: gender/deid.json
+  ethnicity:
+    estimators:
+      - name: fairface
+        orig_json: ethnicity/orig.json
+        deid_json: ethnicity/deid.json
+  macro_exp:
+    estimators:
+      - name: poster
+        orig_json: macro_exp/orig.json
+        deid_json: macro_exp/deid.json
+  micro_exp:
+    estimators:
+      - name: samer
+        orig_json: micro_exp/orig.json
+        deid_json: micro_exp/deid.json
+  landmark:
+    estimators:
+      - name: mediapipe
+        orig_json: landmark/orig.json
+        deid_json: landmark/deid.json
+  gaze:
+    estimators:
+      - name: l2cs
+        orig_json: gaze/orig.json
+        deid_json: gaze/deid.json
+  rppg:
+    estimators:
+      - name: rppg_estimator
+        orig_json: rppg/orig.json
+        deid_json: rppg/deid.json
+  face_embedding:
+    estimators:
+      - name: arcface
+        orig_json: face_embedding/arcface_orig.json
+        deid_json: face_embedding/arcface_deid.json
+      - name: cosface
+        orig_json: face_embedding/cosface_orig.json
+        deid_json: face_embedding/cosface_deid.json
+      - name: adaface
+        orig_json: face_embedding/adaface_orig.json
+        deid_json: face_embedding/adaface_deid.json
+  niqe:
+    estimators:
+      - name: pyiqa
+        deid_json: niqe/deid.json

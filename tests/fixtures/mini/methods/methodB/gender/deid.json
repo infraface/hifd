@@ -1,0 +1,30 @@
+{
+  "task": "gender",
+  "source": "deid",
+  "estimator": "mivolo",
+  "schema_version": "1.0",
+  "predictions": {
+    "s1": {
+      "probs": [
+        0.6,
+        0.4
+      ]
+    },
+    "s2": {
+      "probs": [
+        0.6,
+        0.4
+      ]
+    },
+    "s3": {
+      "probs": [
+        0.6,
+        0.4
+      ]
+    }
+  },
+  "class_names": [
+    "male",
+    "female"
+  ]
+}

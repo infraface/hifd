@@ -1,0 +1,17 @@
+{
+  "task": "niqe",
+  "source": "deid",
+  "estimator": "pyiqa",
+  "schema_version": "1.0",
+  "predictions": {
+    "s1": {
+      "niqe": 3.5
+    },
+    "s2": {
+      "niqe": 3.5
+    },
+    "s3": {
+      "niqe": 3.5
+    }
+  }
+}
