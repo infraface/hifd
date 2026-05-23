@@ -45,7 +45,7 @@ def batch_U2(
 ) -> NDArray[np.floating[Any]]:
     if s_me is not None:
         return cast(NDArray[np.floating[Any]], 0.5 * (s_gaze + s_me))
-    return s_gaze.copy()
+    return cast(NDArray[np.floating[Any]], s_gaze.copy())
 
 
 def batch_U3(
