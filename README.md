@@ -93,16 +93,6 @@ hifd.DEFAULT_PROFILES["balanced"]           # {"P": 0.2, "Q": 0.2, "U1": 0.2, ..
 To override, build a plain dict and pass it (`run_pipeline(constants=...)`) or
 provide `--constants my.yaml` on the CLI.
 
-## Versioning and stability
-
-`hifd` is `0.x`: the JSON schema and Python API may evolve until 1.0. Schema
-version is asserted at load time; mismatched files are rejected with a clear
-error.
-
-## License
-
-MIT.
-
 ## Citation
 
 If you use HiFD in published work, please cite the paper [TBD].
