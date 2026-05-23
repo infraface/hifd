@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any, cast
 
 import numpy as np
-import pandas as pd
+import pandas as pd  # type: ignore[import-untyped]
 from numpy.typing import NDArray
 
 # ----- 5.1 Per-sample level scores -------------------------------------------
