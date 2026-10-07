@@ -95,4 +95,12 @@ provide `--constants my.yaml` on the CLI.
 
 ## Citation
 
-If you use HiFD in published work, please cite the paper [TBD].
+If you find our work useful, please kindly cite as:
+```
+@inproceedings{wei2026hifd,
+  title={How Private is Private? A Comparative Study for Face De-Identification},
+  author={Wei, Hui and Yu, Hao and Kuurila-Zhang, Hui and Zhao, Guoying},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2026}
+}
+```
