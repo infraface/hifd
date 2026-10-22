@@ -1,4 +1,4 @@
-# hifd
+# HiFD metric
 
 [![CI](https://github.com/infraface/hifd/actions/workflows/ci.yml/badge.svg)](https://github.com/infraface/hifd/actions/workflows/ci.yml)
 
@@ -7,7 +7,7 @@ It combines privacy (face-recognition resistance), perceptual quality, and
 three levels of utility preservation (macro cues, micro cues,
 physiological signals) into a single composite score.
 
-This is the official scoring toolkit of the NeurIPS 2026 Evaluations & Datasets
+This is the official toolkit of the NeurIPS 2026 Evaluations & Datasets
 track paper:
 
 > **How Private is Private? A Comparative Study for Face De-Identification**<br>
