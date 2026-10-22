@@ -12,7 +12,7 @@ track paper:
 
 > **How Private is Private? A Comparative Study for Face De-Identification**<br>
 > Hui Wei, Hao Yu, Hui Kuurila-Zhang, Guoying Zhao<br>
-> Center for Machine Vision and Signal Analysis, University of Oulu, Finland
+> $ˆ1$ELLIS Institute Finland, Finland. $ˆ2$Center for Machine Vision and Signal Analysis, University of Oulu, Finland
 
 | | |
 |---|---|
