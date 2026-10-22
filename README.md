@@ -2,10 +2,40 @@
 
 [![CI](https://github.com/infraface/hifd/actions/workflows/ci.yml/badge.svg)](https://github.com/infraface/hifd/actions/workflows/ci.yml)
 
-**HiFD** is a holistic metric for evaluating face de-identification methods.
+**HiFD** is a metric for evaluating face de-identification methods.
 It combines privacy (face-recognition resistance), perceptual quality, and
-three levels of utility preservation (macro cues, fine-grained cues,
+three levels of utility preservation (macro cues, micro cues,
 physiological signals) into a single composite score.
+
+This is the official scoring toolkit of the NeurIPS 2026 Evaluations & Datasets
+track paper:
+
+> **How Private is Private? A Comparative Study for Face De-Identification**<br>
+> Hui Wei, Hao Yu, Hui Kuurila-Zhang, Guoying Zhao<br>
+> Center for Machine Vision and Signal Analysis, University of Oulu, Finland
+
+| | |
+|---|---|
+| 📄 Paper | https://arxiv.org/abs/2610.10334 |
+| 🌐 Project page & leaderboard | <https://cv-ac.github.io/hifd/> |
+| 💻 Code | <https://github.com/infraface/hifd> |
+| 🗂️ Dataset (UtilFace) | <https://huggingface.co/datasets/huiwei25/UtilFace> (gated, research-only) |
+| ✉️ Contact | [hui.wei@oulu.fi](mailto:hui.wei@oulu.fi) |
+
+
+## The UtilFace dataset
+
+The [Hugging Face release](https://huggingface.co/datasets/huiwei25/UtilFace)
+contains **no images**. It provides the identity keys and file list that define
+UtilFace inside WebFace42M, the sampling strata, the HiFD scores of the twelve
+baselines, Croissant metadata (core + Responsible AI), and **mini-UtilFace**, a
+2,000-image bundle of per-image sub-scores that reproduces the published ranking
+without any face data. To rebuild the images, obtain WebFace42M from its
+official providers (<https://www.face-benchmark.org>) and select the files
+listed in `data/images.csv`. The release is CC BY-NC 4.0 and gated for
+non-commercial research on face de-identification only.
+
+## This package
 
 This package provides the **scoring core**: given JSON files of pre-computed
 estimator predictions on (a) original images and (b) de-identified outputs,
@@ -81,26 +111,22 @@ print(r.composite_df)
 See [docs/schema.md](docs/schema.md) for the JSON envelope spec and one example
 per task type.
 
-## Defaults
+## License
 
-Constants and profiles ship as immutable mappings:
-
-```python
-hifd.DEFAULT_CONSTANTS["tau_HR"]            # 20.0
-hifd.DEFAULT_PROFILES["balanced"]           # {"P": 0.2, "Q": 0.2, "U1": 0.2, ...}
-```
-
-To override, build a plain dict and pass it (`run_pipeline(constants=...)`) or
-provide `--constants my.yaml` on the CLI.
+The `hifd` code is MIT-licensed. The UtilFace release is CC BY-NC 4.0; the
+underlying WebFace42M images remain subject to the WebFace42M terms of use.
 
 ## Citation
 
-If you find our work useful, please kindly cite as:
-```
-@inproceedings{wei2026hifd,
-  title={How Private is Private? A Comparative Study for Face De-Identification},
-  author={Wei, Hui and Yu, Hao and Kuurila-Zhang, Hui and Zhao, Guoying},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2026}
+If you use HiFD or UtilFace in published work, please cite:
+
+```bibtex
+@inproceedings{wei2026private,
+  title     = {How Private is Private? A Comparative Study for Face De-Identification},
+  author    = {Wei, Hui and Yu, Hao and Kuurila-Zhang, Hui and Zhao, Guoying},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track},
+  year      = {2026}
 }
 ```
+
+If you use UtilFace, please also cite WebFace260M/WebFace42M (Zhu et al., CVPR 2021).
